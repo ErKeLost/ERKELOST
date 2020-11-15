@@ -1,0 +1,100 @@
+<!--pages/index/index.wxml-->
+<!-- 轮播图区域-->
+
+  
+<view class="indexContainer">
+  <!-- 轮播图区域 -->
+  <swiper class="banner" circular autoplay="true" interval='3000' indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33"> 
+    <swiper-item wx:for="{{bannerList}}" wx:key='bannerId'>
+      <image src="{{item.pic}}"></image>  
+    </swiper-item>
+  </swiper>
+
+<!-- 图标区域 -->
+<view class="navContainer">
+    <view class="navItem">
+      <text class="iconfont icon-rili" selectable="false" space="false" decode="false">
+      </text>
+      <text class="font" selectable="false" space="false" decode="false">
+        每日推荐
+      </text>
+    </view>
+      <view class="navItem">
+      <text class="iconfont icon-diantai" selectable="false" space="false" decode="false">
+      </text>
+      <text class="font" selectable="false" space="false" decode="false">
+        私人FM
+      </text>
+    </view>
+      <view class="navItem">
+      <text class="iconfont icon-gedan" selectable="false" space="false" decode="false">
+      </text>
+      <text class="font" selectable="false" space="false" decode="false">
+        歌单
+      </text>
+    </view>
+      <view class="navItem">
+      <text class="iconfont icon-paixingbang" selectable="false" space="false" decode="false">
+      </text>
+      <text class="font" selectable="false" space="false" decode="false">
+        排行榜
+      </text>
+    </view>
+      <view class="navItem">
+      <text class="iconfont icon-biaoqianA01_zhibo-68" selectable="false" space="false" decode="false">
+      </text>
+      <text class="font" selectable="false" space="false" decode="false">
+        直播
+      </text>
+    </view>
+</view>
+<!--推荐歌曲区域-->
+<view class="recommendContainer">
+  <navHeader title="推荐歌单" nav="查看更多"></navHeader>
+  <scroll-view class="recommendScroll" enable-flex scroll-x>
+      <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+    <image class="" src="{{item.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <text class="itemT" selectable="false" space="false" decode="false"> 
+    {{item.name}}
+    </text>
+      
+  </view>
+    
+  </scroll-view>
+    
+</view>
+<view class="topList">
+  <navHeader title="最新歌曲" nav="播放全部"></navHeader>
+  <swiper class="topListSwiper" next-margin='50rpx'   >
+    <swiper-item class="" item-id="" wx:for="{{topList}}" wx:key="id">
+    <view class="swiperItem">
+        <view class="topTitle">
+        {{item.name}}
+      </view>
+      <view class="musicItem">
+        <image class="" src="{{item.blurPicUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+         <text class="musicName" selectable="false" space="false" decode="false">
+           {{item.artist.name}}
+         </text>
+         <text class="singerName" selectable="false" space="false" decode="false">
+           {{item.artist.trans}}
+         </text>
+         <view class="iconfont icon-bofang">
+           
+         </view>
+         <view class="Home">
+           独家
+         </view>
+           
+           
+            
+      </view>
+          
+    </view>
+      
+    </swiper-item>
+      
+  </swiper>
+    
+</view>
+</view>

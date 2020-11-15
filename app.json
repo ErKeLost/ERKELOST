@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/video/video"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "网易云音乐"
+  },
+  "sitemapLocation": "sitemap12.json",
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/1.png",
+        "selectedIconPath": "/static/images/1.1.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "MV",
+        "iconPath": "/static/images/2.png",
+        "selectedIconPath": "/static/images/2.1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "/static/images/3.png",
+        "selectedIconPath": "/static/images/3.1.png"
+      }
+    ],
+    "color": "#000000",
+    "selectedColor": "#d43c33"
+  }
+}

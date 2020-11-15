@@ -1,0 +1,12 @@
+<view class="header">
+    <view class="left">
+      <text class="tittle" selectable="false" space="false" decode="false">
+      {{title}}
+    </text>
+    </view>
+      <view class="right">
+      <text class="tittleOne" selectable="false" space="false" decode="false">
+      {{nav}}
+    </text>
+    </view>
+  </view>
