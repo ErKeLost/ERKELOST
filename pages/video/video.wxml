@@ -1,2 +1,13 @@
-<!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="videoContainer">
+  <scroll-view class="navScroll" enable-flex scroll-x="true">
+    <view class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="navContent  {{item.id === navId ? 'active' : ''}}" bindtap='changeNav' id='{{item.id}}'>
+        {{item.name}}
+      </view>
+        
+    </view>
+      
+  </scroll-view>
+    
+</view>
+  

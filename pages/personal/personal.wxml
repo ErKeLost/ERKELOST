@@ -1,12 +1,12 @@
 <view class="personalContainer">
   <view class="user-section">
     <image class="bg" src="/static/images/personal/bgImg2.jpg"></image>
-    <view class="user-info-box">
+    <view class="user-info-box" bindtap='toLogin'>
       <view class="portrait-box">
-        <image class="portrait" src='/static/images/personal/missing-face.png'></image>
+        <image class="portrait" src='{{userInfo.avatarUrl ? userInfo.avatarUrl : "/static/images/personal/missing-face.png"}}'></image>
       </view>
       <view class="info-box">
-        <text class="username">游客</text>
+        <text class="username">{{userInfo.nickname ? userInfo.nickname : '游客'}}</text>
       </view>
     </view>
 
@@ -26,7 +26,12 @@
   </view>
 
 
-  <view class="cover-container">
+  <view class="cover-container"
+             bindtouchstart="handleTouchStart"
+             bindtouchmove="handleTouchMove"
+             bindtouchend="handleTouchEnd"
+             style="transform:{{coverTransform}};transition:{{coverTransition}}"
+  >
     <image class="arc" src="/static/images/personal/arc.png"></image>
     <!-- 个人中心导航 -->
     <view class="nav-section">
@@ -53,6 +58,14 @@
       <view class="recentPlayContainer">
         <text class="title">最近播放</text>
         <!-- 最近播放记录 -->
+        <scroll-view class="recentScroll" scroll-x enable-flex >
+          <view class="recentItem" wx:for="{{recentPlayList}}" wx:key="id">
+            <image class="" src="{{item.song.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+              
+          </view>
+            
+        </scroll-view>
+          
       </view>
 
       <view class="cardList">

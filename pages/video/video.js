@@ -1,20 +1,40 @@
 // pages/video/video.js
+import request from '../../uitls/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    videoGroupList:[],
+    navId:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   this.getVideoGroupListData()
+   this.getVideoList(this.data.navId)
   },
-
+  async  getVideoGroupListData(){
+    let videoGroupListData = await request('/video/group/list')
+    this.setData({
+      videoGroupList:videoGroupListData.data.slice(0,13),
+      navId:videoGroupListData.data[0].id
+    })
+  },
+  async  getVideoList(navId){
+    let videoListData = await request('/video/group',{id:navId})
+    console.log(videoListData);
+  },
+  changeNav(event){
+    let navId = event.currentTarget.id;
+    console.log(navId);
+    this.setData({
+      navId:navId * 1
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

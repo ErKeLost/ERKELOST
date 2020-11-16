@@ -1,1 +1,18 @@
 /* pages/video/video.wxss */
+.navScroll{
+  display: flex;
+  white-space: nowrap;
+}
+.navScroll .navItem{
+  padding: 0 30rpx;
+  font-size: 25rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.active{
+  border-bottom: 3px solid red;
+  /* transform: translateY(-20rpx); */
+}
+.navContent{
+  /* border-bottom: 1px solid red; */
+}

@@ -1,8 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/personal/personal",
-    "pages/video/video"
+    "pages/login/login",
+
+    "pages/video/video",
+    
+    "pages/index/index"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
@@ -11,7 +15,8 @@
   },
   "sitemapLocation": "sitemap12.json",
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "/static/images/1.png",
