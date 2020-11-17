@@ -26,6 +26,8 @@ Page({
           userInfo : JSON.parse(userInfo)
         })
       this.getUserRecentPlayList(this.data.userInfo.userId)
+      // console.log(this.data.userInfo.userId);
+      // console.log(this.data.recentPlayList.song.name);
       }
   },
   async getUserRecentPlayList(userId){
@@ -72,7 +74,7 @@ Page({
   handleTouchEnd() {
     this.setData({
       coverTransform: `translateY(0rpx)`,
-      coverTransition:'transform 1s linear'
+      coverTransition:'transform .5s linear'
     })
   },
   /**

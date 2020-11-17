@@ -1,0 +1,76 @@
+/* pages/recommendSong/recommendSong.wxss */
+.header{
+    width: 100%;
+    height: 500rpx;
+    position: relative;
+}
+.header image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.date{
+    width: 200rpx;
+    height: 100rpx;
+    /* border: 1px solid pink; */
+    text-align: center;
+    position: absolute;
+    left: 5%;
+    top: 70%;
+    line-height: 100rpx;
+    color: white;
+    font-weight: bold;
+
+}
+.date .day{
+    font-size: 50rpx;
+    margin-right: 20rpx;
+}
+.listContainer{
+    padding: 0 20rpx;
+    border-radius: 20rpx;
+    position: relative;
+    top: -30rpx;
+    background: white;
+}
+.listContainer .listHeader{
+    display: flex;
+    justify-content: space-between;
+}
+.scrollItem{
+    display: flex;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+.scrollItem image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+}
+.musicInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+    
+}
+.musicInfo text{
+   height: 40rpx;
+   line-height: 40rpx;
+   font-size: 24rpx;
+   max-width: 400rpx;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.scrollItem .iconfont{
+    position: absolute;
+    right: 0;
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: right;
+}
+.listScroll{
+    height: calc(100vh - 380rpx );
+}

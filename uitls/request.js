@@ -23,11 +23,23 @@ export default (url,data={},methods='GET') => {
     url:config.mobleHost + url,
     data,
     methods,
-    // header: {'content-type':'application/json'},
+    header: {cookie:wx.getStorageSync('cookies') ? wx.getStorageSync('cookies').find(item => item.indexOf('MUSIC_U') !== -1) : ''},
     // method: 'GET',
     // dataType: 'json',
     // responseType: 'text',
     success: (result) => {
+      if(data.isLogin){
+        wx.setStorage({
+          key: 'cookies',
+          data: result.cookies,
+          success: (result) => {
+            
+          },
+          fail: () => {},
+          complete: () => {}
+        });
+          
+      }
       console.log(result);
       resolve(result.data)
     },

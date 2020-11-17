@@ -1,0 +1,26 @@
+<view class="recommendSongContainer">
+    <view class="header">
+        <image class="" src="/static/images/22.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <view class="date">
+            <text class="day" selectable="false" space="false" decode="false">{{day}}</text>
+             <text class="month" selectable="false" space="false" decode="false">/{{month}}</text>
+        </view>
+    </view>
+    <!-- 列表区域 -->
+    <view class="listContainer">
+        <view class="listHeader">
+            <text class="" selectable="false" space="false" decode="false">播放全部</text>
+            <text class="changeMore" selectable="false" space="false" decode="false">全选</text>
+        </view>
+        <scroll-view class="listScroll" scroll-y>
+            <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+                <image class="" src="{{item.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+                <view class="musicInfo">
+                    <text class="musicName" selectable="false" space="false" decode="false">{{item.name}}</text>
+                    <text class="auther" selectable="false" space="false" decode="false">{{item.ar[0].name}}</text>
+                </view>
+                <text class="iconfont icon-gengduo" selectable="false" space="false" decode="false"></text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

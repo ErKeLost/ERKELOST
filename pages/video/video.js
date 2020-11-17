@@ -7,7 +7,10 @@ Page({
    */
   data: {
     videoGroupList:[],
-    navId:''
+    navId:'',
+    videoList:[],
+    mvList : [],
+    mvid:'',
   },
 
   /**
@@ -15,7 +18,7 @@ Page({
    */
   onLoad: function (options) {
    this.getVideoGroupListData()
-   this.getVideoList(this.data.navId)
+   this.getRecommendList()
   },
   async  getVideoGroupListData(){
     let videoGroupListData = await request('/video/group/list')
@@ -23,17 +26,59 @@ Page({
       videoGroupList:videoGroupListData.data.slice(0,13),
       navId:videoGroupListData.data[0].id
     })
+   this.getVideoList(this.data.navId)
   },
+  // 获取列表数据
   async  getVideoList(navId){
     let videoListData = await request('/video/group',{id:navId})
+    wx.hideLoading();
     console.log(videoListData);
+    let index = 0;
+    let videoList = videoListData.datas.map(item => {
+      item.id = index++
+      return item
+    })
+    this.setData({
+      videoList
+    })
+  },
+  // 获取mv数据
+  async getRecommendList(){
+    let recommendData = await request('/mv/first',{limit:8})
+    // console.log(recommendData);
+    this.setData({
+      mvGroupList:recommendData.data,
+      mvid:recommendData.data.id
+    })
+    this.getMvList(this.data.mvid)
+
+  },
+  // mv地址
+  async getMvList(mvid){
+        let mvData = await request('/mv/url',{id:mvid})
+        // console.log(mvData);
+        this.setData({
+        // mvList:mavData.data
+        })
   },
   changeNav(event){
     let navId = event.currentTarget.id;
-    console.log(navId);
+    // console.log(navId);
     this.setData({
-      navId:navId * 1
+      navId:navId * 1,
+      videoList:[]
     })
+    wx.showLoading({
+      title:"正在加载" ,
+      // mask: true, 
+      success: (result) => {
+        
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+      
+    this.getVideoList(this.data.navId)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
