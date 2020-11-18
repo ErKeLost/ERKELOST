@@ -37,11 +37,16 @@
 .listContainer .listHeader{
     display: flex;
     justify-content: space-between;
+    height: 80rpx;
+    line-height: 80rpx;
+    align-items: center;
 }
 .scrollItem{
     display: flex;
     position: relative;
-    margin-bottom: 20rpx;
+    /* margin: 20rpx 0; */
+    margin-bottom: 30rpx;
+    margin-top: 20rpx;
 }
 .scrollItem image{
     width: 80rpx;
@@ -57,7 +62,7 @@
 .musicInfo text{
    height: 40rpx;
    line-height: 40rpx;
-   font-size: 24rpx;
+   /* font-size: 24rpx; */
    max-width: 400rpx;
     white-space: normal;
     overflow: hidden;
@@ -72,5 +77,36 @@
     text-align: right;
 }
 .listScroll{
-    height: calc(100vh - 380rpx );
+    height: calc(100vh - 580rpx );
+}
+.icon-biaoqianA01_zhibo-68{
+    font-size: 40rpx;
+}
+.icon-gengduo{
+    font-size: 32rpx;
+    transform: translateX(140rpx);
+
+}
+.open{
+    transform: translateX(-140rpx);
+    font-size: 28rpx;
+    font-weight: bold;
+}
+.changeMore{
+    font-size: 28rpx;
+    font-weight: bold;
+} 
+.musicName{
+    /* font-weight: bold; */
+    font-size: 28rpx;
+    font-weight: 500;
+}
+.musicInfo .auther{
+    font-size: 24rpx;
+    color: #797979;
+}
+.xx{
+    font-size: 55rpx;
+    transform: translateX(-80rpx);
+    /* border-radius: 20rpx; */
 }

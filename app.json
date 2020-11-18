@@ -1,12 +1,24 @@
 {
   "pages": [
-    "pages/recommendSong/recommendSong",
-
     "pages/index/index",
 
+    "pages/recommendSong/recommendSong",
+
+    "pages/songDetail/songDetail",
+
+
+
+
+
+
+    "pages/login/login",
+
+
+
+
+
     "pages/video/video",
-    "pages/personal/personal",
-    "pages/login/login"
+    "pages/personal/personal"
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
@@ -15,8 +27,7 @@
   },
   "sitemapLocation": "sitemap12.json",
   "tabBar": {
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "/static/images/1.png",
@@ -37,5 +48,6 @@
     ],
     "color": "#000000",
     "selectedColor": "#d43c33"
-  }
+  },
+  "requireBackgroundModes":["audio"]
 }

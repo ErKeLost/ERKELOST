@@ -12,10 +12,10 @@
 
 <!-- 图标区域 -->
 <view class="navContainer">
-    <view class="navItem">
+    <view class="navItem" bindtap="recommendList">
       <text class="iconfont icon-rili" selectable="false" space="false" decode="false">
       </text>
-      <text class="font" selectable="false" space="false" decode="false">
+      <text class="font" selectable="false" space="false" decode="false"  >
         每日推荐
       </text>
     </view>

@@ -18,7 +18,7 @@ Page({
    */
   onLoad: function (options) {
    this.getVideoGroupListData()
-   this.getRecommendList()
+  //  this.getRecommendList()
   },
   async  getVideoGroupListData(){
     let videoGroupListData = await request('/video/group/list')
@@ -43,24 +43,24 @@ Page({
     })
   },
   // 获取mv数据
-  async getRecommendList(){
-    let recommendData = await request('/mv/first',{limit:8})
-    // console.log(recommendData);
-    this.setData({
-      mvGroupList:recommendData.data,
-      mvid:recommendData.data.id
-    })
-    this.getMvList(this.data.mvid)
+  // async getRecommendList(){
+  //   let recommendData = await request('/mv/first',{limit:8})
+  //   // console.log(recommendData);
+  //   this.setData({
+  //     mvGroupList:recommendData.data,
+  //     mvid:recommendData.data.id
+  //   })
+  //   this.getMvList(this.data.mvid)
 
-  },
-  // mv地址
-  async getMvList(mvid){
-        let mvData = await request('/mv/url',{id:mvid})
-        // console.log(mvData);
-        this.setData({
-        // mvList:mavData.data
-        })
-  },
+  // },
+  // // mv地址
+  // async getMvList(mvid){
+  //       let mvData = await request('/mv/url',{id:mvid})
+  //       // console.log(mvData);
+  //       this.setData({
+  //       // mvList:mavData.data
+  //       })
+  // },
   changeNav(event){
     let navId = event.currentTarget.id;
     // console.log(navId);

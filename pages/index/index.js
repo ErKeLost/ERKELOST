@@ -52,6 +52,17 @@ Page({
      topList:topListData.albums
    })
   },
+  recommendList(){
+    wx.navigateTo({
+      url: '/pages/recommendSong/recommendSong',
+      success: (result) => {
+        
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+      
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

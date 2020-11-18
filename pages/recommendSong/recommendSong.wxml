@@ -9,17 +9,27 @@
     <!-- 列表区域 -->
     <view class="listContainer">
         <view class="listHeader">
-            <text class="" selectable="false" space="false" decode="false">播放全部</text>
+            <text class="iconfont icon-biaoqianA01_zhibo-68" selectable="false" space="false" decode="false"></text>
+            
+            <text class="open" selectable="false" space="false" decode="false">播放全部</text>
+            <text class="iconfont icon-gengduo" selectable="false" space="false" decode="false"></text>
+
             <text class="changeMore" selectable="false" space="false" decode="false">全选</text>
         </view>
         <scroll-view class="listScroll" scroll-y>
-            <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+            <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" data-index='{{index}}' data-song='{{item}}' bindtap = "toSongDetail">
                 <image class="" src="{{item.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
                 <view class="musicInfo">
-                    <text class="musicName" selectable="false" space="false" decode="false">{{item.name}}</text>
+                    <view>
+                        <text class="musicName" selectable="false" space="false" decode="false">{{item.name}}</text>
+                        
+                    </view>
+                      
                     <text class="auther" selectable="false" space="false" decode="false">{{item.ar[0].name}}</text>
                 </view>
-                <text class="iconfont icon-gengduo" selectable="false" space="false" decode="false"></text>
+                <text class="iconfont icon-gengduo1" selectable="false" space="false" decode="false"></text>
+                <text class="iconfont xx icon-biaoqianA01_zhibo-68" selectable="false" space="false" decode="false"></text>
+
             </view>
         </scroll-view>
     </view>

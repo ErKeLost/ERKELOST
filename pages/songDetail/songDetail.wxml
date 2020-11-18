@@ -1,0 +1,68 @@
+<view class="songDetailContainer">
+  <view class="bg">
+    <image class="bg" src="{{song.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <view class="bgaa">
+      
+    </view>
+      
+  </view>
+  <view class="top">
+    <view class="left">
+      <view class="musicName">{{song.name}}</view>
+      <view class="author">{{song.ar[0].name}} ></view>
+
+    </view>
+    <view class="right">
+      <text class="iconfont icon-zhibo3" selectable="false" space="false" decode="false"></text>
+      <text class="iconfont icon-iconfontzhizuobiaozhun20" selectable="false" space="false" decode="false"></text>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="circle"></view>
+    <image class="needle {{isPlay ? 'needleRotate' : ''}}" src="/static/images/song/needle.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <view class="discContainer {{isPlay && 'discAnimation'}}">
+      <image class="disc" src="/static/images/song/disc.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      <image class="musicImg" src="{{song.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    </view>
+  </view>
+  <!--顶部控制器-->
+ <view class="bottom">
+     <view class="musicControl">
+    <text class="iconfont icon-xihuan" selectable="false" space="false" decode="false"></text>
+    <text class="iconfont icon-download" selectable="false" space="false" decode="false"></text>
+    <text class="iconfont icon-yichang" selectable="false" space="false" decode="false"></text>
+    <text class="iconfont icon-chat" selectable="false" space="false" decode="false"></text>
+    <text class="iconfont icon-gengduo2" selectable="false" space="false" decode="false"></text>
+  </view>
+  <!--进度条-->
+  <view class="progressControl">
+    <text class="text" selectable="false" space="false" decode="false">
+      {{currentTime}}
+    </text>
+    <view class="barControl">
+      <view class="currentTime">
+        <view class="circleBar">
+          
+        </view>
+          
+      </view>
+        
+    </view>
+    <text class="text" selectable="false" space="false" decode="false">
+      {{durationTime}}
+    </text>
+      
+  </view>
+  <!--底部控制器-->
+  <view class="bottomControl">
+    <text class="iconfont icon-liebiaoxunhuan" selectable="false" space="false" decode="false"></text>
+    <text class="iconfont icon-shangyishoushangyige" selectable="false" space="false" decode="false" bindtap="handleSwitch" id="pre"></text>
+    <text class="poa iconfont {{isPlay ? 'icon-zanting1': 'icon-iconset0481'}}" selectable="false" space="false" decode="false"  bindtap="handleMusic"></text>
+    <text class="iconfont icon-xiayigexiayishou" selectable="false" space="false" decode="false"  bindtap="handleSwitch" id="next"></text>
+    <text class="iconfont icon-bofangliebiao" selectable="false" space="false" decode="false"></text>
+  </view>
+    
+    
+ </view>
+   
+</view>
